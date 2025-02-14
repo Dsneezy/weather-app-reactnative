@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "autoprefixer": "^10.4.20",
+    "axios": "^1.7.9",
     "expo": "~52.0.32",
     "expo-font": "~13.0.3",
     "expo-status-bar": "~2.0.1",
