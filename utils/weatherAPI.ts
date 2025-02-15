@@ -1,15 +1,7 @@
 import axios from "axios";
 import { apiKey } from "../constants";
+import { ForecastParams, LocationsParams } from "../shared/interfaces";
 
-// make sure that you put this file in .gitignore so people can not steal your api key
-interface ForecastParams {
-    cityName: string;
-    days: number;
-}
-
-interface LocationsParams {
-    cityName: string;
-}
 
 const forecastEndpoint = (params : ForecastParams): string => {
     return `http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${params.cityName}&days=${params.days}&aqi=no&alerts=no`
