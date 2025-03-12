@@ -12,7 +12,7 @@ export default function SearchBar({ onSearch }: {onSearch: (text: string) => voi
 
     return (
         <View style={styles.search_bar}>
-            <TextInput style={styles.input} placeholder="Enter City Name" 
+            <TextInput placeholder="Enter City Name" 
             value={searchText} onChangeText={setSearchText} // local editing
             onSubmitEditing={() => onSearch(searchText)} // search only on enter
             returnKeyType="search" // changes keyboard to show search button
@@ -25,19 +25,12 @@ const styles = StyleSheet.create({
     search_bar: {
         flexDirection: "row",
         alignItems: "center",
-        backgroundColor: "gray",
+        backgroundColor: "#b5a1f8",
         width: "90%",
         marginVertical: 10,
         alignSelf: "center",
-        borderRadius: 5,
+        borderRadius: 10,
         height: 50,
         paddingLeft: 3,
       },
-    input: {
-        height: 40,
-        width: "80%",
-        borderColor: "gray",
-        borderWidth: 1,
-        borderRadius: 5,
-    }
 });
