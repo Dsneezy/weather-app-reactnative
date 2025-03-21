@@ -8,7 +8,11 @@ export interface CurrentParams {
 }
 
 export interface SearchParams {
-    cityName: string;
+    searchText: string;
+}
+
+export interface SearchResults {
+    name: string;
     region: string;
 }
 

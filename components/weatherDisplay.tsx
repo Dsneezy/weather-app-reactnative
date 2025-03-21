@@ -110,7 +110,7 @@ export default function WeatherDisplay({ cityName }: { cityName: string }) {
     location: {
       justifyContent: "center",
       alignItems: "center",
-      marginVertical: 20, 
+      marginVertical: 160, 
     },
     location_text: {
       color: "white",

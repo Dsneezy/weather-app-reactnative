@@ -3,18 +3,20 @@ import { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import WeatherDisplay from "../components/weatherDisplay";
 import SearchBar from "../components/searchBar";
+import DropdownMenu from "../components/dropdownMenu";
 
 
 export default function FrontScreen() {
   const [cityName, setCityName] = useState<string>("San Diego");
+  const [searchText, setSearchText] = useState<string>("San Diego")
 
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Weather</Text>
       <View style={styles.search_bar} >
-        <SearchBar onSearch={setCityName} /> 
+        <SearchBar onSearch={setCityName} searchText={searchText} setSearchText={setSearchText}/> 
+        {cityName.length > 0  && <DropdownMenu onClick={setCityName} searchText={searchText} setSearchText={setSearchText}/> }
       </View>
-      <View style={styles.horizontalLine}> </View>
       <WeatherDisplay cityName={cityName} />
     </View>
   );
@@ -35,11 +37,11 @@ const styles = StyleSheet.create({
     color: "white",
   },
   search_bar: {
-    flexDirection: "row",
+    flexDirection: "column",
     alignItems: "center",
-    backgroundColor: "#b5a1f8",
+    //backgroundColor: "#b5a1f8",
     width: "90%",
-    marginVertical: 10,
+    //paddingTop: 10,
     alignSelf: "center",
     borderRadius: 10,
     height: 50,

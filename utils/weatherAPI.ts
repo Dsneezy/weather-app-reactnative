@@ -10,7 +10,7 @@ const currentEndpoint = (params: CurrentParams): string => {
     return `http://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${params.cityName}`
 };
 const searchEndpoint = (params: SearchParams): string => {
-    return `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${params.cityName}`
+    return `http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${params.searchText}`
 }
 
 const apiCall = async (endpoint: string) => {

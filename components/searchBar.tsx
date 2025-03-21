@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, StyleSheet } from "react-native";
 
-export default function SearchBar({ onSearch }: {onSearch: (text: string) => void}) {
-    const [searchText, setSearchText] = useState<string>("");
+interface SearchBarProps {
+    searchText: string;
+    setSearchText: (text: string) => void;
+    onSearch: (text: string) => void;
+}
+
+export default function SearchBar({ onSearch, searchText, setSearchText}: SearchBarProps) {
 
     const handleInputChange = (text: string) => {
         setSearchText(text); // update state to input string when input changes
