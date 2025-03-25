@@ -25,7 +25,7 @@ export default function DropdownMenu({onClick, searchText, setSearchText}: dropD
 
                 const params: SearchParams = {searchText};
                 const data = await fetchLocationSearch(params);
-                console.log(data);
+                //console.log(data);
 
                 if (data) {
                     const availableCities: SearchResults[] = data.slice(0,3).map((city: SearchResults) => ({
